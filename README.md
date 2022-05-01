@@ -31,48 +31,4 @@ neutron address-scope-create --shared test-no-nat 4
 ```bash
 neutron subnetpool-create --address-scope test-no-nat --shared --pool-prefix 192.168.152.0/24 --default-prefixlen 26 nonat-pool-ip4
 ```
-<p>Create a new network for the Public/External :</p>
-```bash
-neutron net-create --shared --provider:physical_network physnet1 --provider:network_type flat Public-Net --shared --router:external
-```
 
-<p>create new subnet for External network</p>
-```bash
-neutron subnet-create Public-Net --name Public-Subnet --subnetpool nonat-pool-ip4 --dns-nameserver 8.8.8.8
-```
-
-<p>Create Internal Network :</p>
-```bash
-neutron net-create nonat-net-1
-```
-
-
-<p>create subnet for internal network:</p>
-```bash
-neutron subnet-create --name nonat-subnet-1 --subnetpool nonat-pool-ip4 nonat-net-1
-```
-
-<p>Create router: </p>
-```bash
-neutron router-create no-nat-router
-```
-
-
-<p>attach network which created before to the router:</p>
-
-```
-neutron router-interface-add no-nat-router nonat-subnet-1
-neutron router-gateway-set no-nat-router Public-Net
-```bash
-
-<p>try to deploy vm and make sure security group is open all (for testing only)</p>
-<p>make sure router gateway is pingable from VM and mikrotik router</p>
-
-
-
-<p>if router pingable from mikrotik and openstack aio VM the next step is route external network to openstack internal network</p>
-
-
-<p>Done</p>
-
-    
