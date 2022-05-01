@@ -59,11 +59,11 @@ neutron router-create no-nat-router
 
 
 <p>attach network which created before to the router:</p>
-```bash
-neutron router-interface-add no-nat-router nonat-subnet-1
 
-neutron router-gateway-set no-nat-router Public-Net
 ```
+neutron router-interface-add no-nat-router nonat-subnet-1
+neutron router-gateway-set no-nat-router Public-Net
+```bash
 
 <p>try to deploy vm and make sure security group is open all (for testing only)</p>
 <p>make sure router gateway is pingable from VM and mikrotik router</p>
