@@ -1,5 +1,5 @@
 <h1>Openstack No NAT Challengs</h1>
-<br>
+
 <p>
     here i try Openstack without NAT so local network can directly accessed from outside
 </p>
@@ -35,18 +35,18 @@ neutron subnetpool-create --address-scope test-no-nat --shared --pool-prefix 192
 ```bash
 neutron net-create --shared --provider:physical_network physnet1 --provider:network_type flat Public-Net --shared --router:external
 ```
-<br>
+
 <p>create new subnet for External network</p>
 ```bash
 neutron subnet-create Public-Net --name Public-Subnet --subnetpool nonat-pool-ip4 --dns-nameserver 8.8.8.8
 ```
-<br>
+
 <p>Create Internal Network :</p>
 ```bash
 neutron net-create nonat-net-1
 ```
 
-<br>
+
 <p>create subnet for internal network:</p>
 ```bash
 neutron subnet-create --name nonat-subnet-1 --subnetpool nonat-pool-ip4 nonat-net-1
@@ -57,7 +57,7 @@ neutron subnet-create --name nonat-subnet-1 --subnetpool nonat-pool-ip4 nonat-ne
 neutron router-create no-nat-router
 ```
 
-<br>
+
 <p>attach network which created before to the router:</p>
 ```bash
 neutron router-interface-add no-nat-router nonat-subnet-1
@@ -69,18 +69,10 @@ neutron router-gateway-set no-nat-router Public-Net
 <p>make sure router gateway is pingable from VM and mikrotik router</p>
 
 
-<br>
+
 <p>if router pingable from mikrotik and openstack aio VM the next step is route external network to openstack internal network</p>
 
-<br>
+
 <p>Done</p>
 
-
-
-
-```bash
-neutron router-interface-add no-nat-router nonat-subnet-1
-
-neutron router-gateway-set no-nat-router Public-Net
-```
     
