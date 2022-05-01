@@ -74,4 +74,13 @@ neutron router-gateway-set no-nat-router Public-Net
 
 <br>
 <p>Done</p>
+
+
+
+
+```bash
+neutron router-interface-add no-nat-router nonat-subnet-1
+
+neutron router-gateway-set no-nat-router Public-Net
+```
     
