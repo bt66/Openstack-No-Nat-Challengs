@@ -18,10 +18,10 @@
     <li>I deploy All in one Openstack with kulla ansible and venv, take a look Global yaml and inventory in this repository</li>
     <li>Because i use python3 venv, install <a href="https://pypi.org/project/python-openstackclient/">neutron client</a> and <a href="https://pypi.org/project/python-neutronclient/">openstack client</a></li>
 
-    <li>next is networking sectio
-        here i use 3 network interface : 1 for external network, 1 for internal network(kolla deploynemt), 1 for neutron(without ip address
-        i create mikrotik netwk like this
-    </li>
+    <li>next is networking sectio</li>
+    <p>here i use 3 network interface : 1 for external network, 1 for internal network(kolla deploynemt), 1 for neutron(without ip address
+        i create mikrotik netwk like this</p>
+    
 
 <p>create address scope :</p>
 
