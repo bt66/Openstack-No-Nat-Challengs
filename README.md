@@ -14,10 +14,10 @@
 <p>bassicly i follow <a href="https://superuser.openstack.org/articles/disable-nat-ipv4-openstack/">this tutorial</a> but i use different command when create network</p>
 
 <h3>Step By Step Guide :</h3>
-<ul>
-    <ol>I deploy All in one Openstack with kulla ansible and venv, take a look Global yaml and inventory in this repository</ol>
-    <ol>Because i use python3 venv, install <a href="https://pypi.org/project/python-openstackclient/">neutron client</a> and <a href="https://pypi.org/project/python-neutronclient/">openstack client</a></ol>
-    <ol>
+<ol>
+    <li>I deploy All in one Openstack with kulla ansible and venv, take a look Global yaml and inventory in this repository</li>
+    <li>Because i use python3 venv, install <a href="https://pypi.org/project/python-openstackclient/">neutron client</a> and <a href="https://pypi.org/project/python-neutronclient/">openstack client</a></li>
+    <li>
         <p>next is networking section</p>
         <p>here i use 3 network interface : 1 for external network, 1 for internal network(kolla deploynemt), 1 for neutron(without ip address)</p>
         <p>i create mikrotik netwk like this </p>
@@ -74,5 +74,5 @@
 
         <br>
         <p>Done</p>
-    </ol>
+    </li>
 </ol>
