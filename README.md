@@ -20,8 +20,8 @@
     <li>next is networking sectio</li>
 </ol>
 
-<p>here i use 3 network interface : 1 for external network, 1 for internal network(kolla deploynemt), 1 for neutron(without ip address i create mikrotik netwk like this</p>
-    
+<p>here i use 3 network interface : 1 for external network, 1 for internal network(kolla deploynemt), 1 for neutron(without ip address i create mikrotik network like this</p>
+![alt text](https://github.com/bt66/Openstack-No-Nat-Challengs/blob/main/images/ip-address.png?raw=true)
 <p>create address scope :</p>
 
 ```bash
