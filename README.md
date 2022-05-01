@@ -19,6 +19,12 @@
     <li>Because i use python3 venv, install <a href="https://pypi.org/project/python-openstackclient/">neutron client</a> and <a href="https://pypi.org/project/python-neutronclient/">openstack client</a></li>
 </ol>
 
+<p>next is networking section</p>
+<p>here i use 3 network interface : 1 for external network, 1 for internal network(kolla deploynemt), 1 for neutron(without ip address)</p>
+<p>i create mikrotik netwk like this </p>
+
+<p>create address scope :</p>
+
 ```bash
 neutron subnetpool-create --address-scope test-no-nat --shared --pool-prefix 192.168.152.0/24 --default-prefixlen 26 nonat-pool-ip4
 ```
