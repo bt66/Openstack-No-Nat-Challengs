@@ -17,11 +17,16 @@
 <ol>
     <li>I deploy All in one Openstack with kulla ansible and venv, take a look Global yaml and inventory in this repository</li>
     <li>Because i use python3 venv, install <a href="https://pypi.org/project/python-openstackclient/">neutron client</a> and <a href="https://pypi.org/project/python-neutronclient/">openstack client</a></li>
-    <li>next is networking sectio</li>
+    <li>next is networking section</li>
 </ol>
 
 <p>here i use 3 network interface : 1 for external network, 1 for internal network(kolla deploynemt), 1 for neutron(without ip address i create mikrotik network like this</p>
+<p>10.10.30.x is for external network</p>
+<p>192.168.231.0/24 for internal network</p>
+<p>192.168.152.1/24 for neutron (vm network)</p>
+
 ![alt text](https://github.com/bt66/Openstack-No-Nat-Challengs/blob/main/images/ip-address.png?raw=true)
+
 <p>create address scope :</p>
 
 ```bash
@@ -74,11 +79,32 @@ neutron router-gateway-set no-nat-router Public-Net
 ```
 
 <p>try to deploy vm and make sure security group is open all (for testing only)</p>
+
+![alt text](https://github.com/bt66/Openstack-No-Nat-Challengs/blob/main/images/test-instance.png?raw=true)
+
 <p>make sure router gateway is pingable from VM and mikrotik router</p>
 
+<p>ping vm to router Openstack</p>
+
+![alt text](https://github.com/bt66/Openstack-No-Nat-Challengs/blob/main/images/vm-to-openstack-router.png?raw=true)
+
+<p>ping mikrotik to router Openstack</p>
+
+![alt text](https://github.com/bt66/Openstack-No-Nat-Challengs/blob/main/images/router-to-mikrotik.png?raw=true)
 
 
 <p>if router pingable from mikrotik and openstack aio VM the next step is route external network to openstack internal network</p>
 
+<p>routing from miktorik to internal network (geli geli) </p>
+
+![alt text](https://github.com/bt66/Openstack-No-Nat-Challengs/blob/main/images/static-routing.png?raw=true)
+
+<p>ping vm to Openstack VM</p>
+
+![alt text](https://github.com/bt66/Openstack-No-Nat-Challengs/blob/main/images/ping-test-from-AIO-VM.png?raw=true)
+
+<p>ping mikrotik to Openstack VM</p>
+
+![alt text](https://github.com/bt66/Openstack-No-Nat-Challengs/blob/main/images/ping-from-mikrotik.png?raw=true)
 
 <p>Done</p>
